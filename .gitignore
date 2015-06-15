@@ -1,3 +1,6 @@
+xenics_pluto.egg-info
+*.pyc
+*/*.pyc
 *-venv
 xenics_pluto.bbprojectd
 xenics/xenics.py
