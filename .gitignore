@@ -1,4 +1,4 @@
-test-venv
+*-venv
 xenics_pluto.bbprojectd
 xenics/xenics.py
 xenics/xenics_wrap.cpp
