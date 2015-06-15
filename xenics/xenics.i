@@ -1,0 +1,122 @@
+%module xenics
+%{
+#define SWIG_FILE_WITH_INIT
+extern int get_max_width();
+extern int get_max_height();
+extern int get_camera_found_on_usb();
+extern int get_image_capture_timeout();
+extern int get_command_timeout();
+extern int set_ADC_Vin(int);
+extern int set_ADC_Vref(int);
+extern int set_Vdet_comA(int);
+extern int set_Vdet_comB(int);
+extern int get_ADC_Vin();
+extern int get_ADC_Vref();
+extern int get_Vdet_comA();
+extern int get_Vdet_comB();
+extern int set_pwm(int);
+extern int get_pwm();
+extern int get_temperature_ADCtype();
+extern int get_temperature_ADU();
+extern void capture_frames(unsigned short *FrameBuffer, int n_pix);
+extern void open_camera();
+extern void close_camera();
+extern int get_fan();
+extern int set_fan(int);
+extern void set_integration_time_millisec(unsigned long);
+extern int get_integration_time_millisec();
+extern int set_gain(int);
+extern int set_nondestructive(int);
+extern int set_xinv(int);
+extern int set_yinv(int);
+extern int set_linerepeat(int);
+extern int set_refout(int);
+extern int set_reset(int);
+extern int set_skim(int);
+extern int set_power(int);
+extern int set_current(int);
+extern int set_bias(int);
+extern int set_bandwidth(int);
+extern int set_outputfactor(int);
+extern int set_itr(int);
+extern int set_multiplereadouts(int);
+extern int get_gain();
+extern int get_nondestructive();
+extern int get_xinv();
+extern int get_yinv();
+extern int get_linerepeat();
+extern int get_refout();
+extern int get_reset();
+extern int get_skim();
+extern int get_power();
+extern int get_current();
+extern int get_bias();
+extern int get_bandwidth();
+extern int get_outputfactor();
+extern int get_itr();
+extern int get_multiplereadouts();
+extern void set_9808_params_to_default();
+%}
+
+%include "numpy.i"
+%init %{
+    import_array();
+%}
+
+extern int get_max_width();
+extern int get_max_height();
+extern int get_camera_found_on_usb();
+extern int get_image_capture_timeout();
+extern int get_command_timeout();
+extern int set_ADC_Vin(int);
+extern int set_ADC_Vref(int);
+extern int set_Vdet_comA(int);
+extern int set_Vdet_comB(int);
+extern int get_ADC_Vin();
+extern int get_ADC_Vref();
+extern int get_Vdet_comA();
+extern int get_Vdet_comB();
+extern int set_pwm(int);
+extern int get_pwm();
+extern int get_temperature_ADCtype();
+extern int get_temperature_ADU();
+%apply (unsigned short* INPLACE_ARRAY1, int DIM1) {(unsigned short* FrameBuffer, int n_pix)}
+extern void capture_frames(unsigned short *FrameBuffer, int n_pix);
+extern void open_camera();
+extern void close_camera();
+extern int get_fan();
+extern int set_fan(int);
+extern void set_integration_time_millisec(unsigned long);
+extern int get_integration_time_millisec();
+extern int set_gain(int);
+extern int set_nondestructive(int);
+extern int set_xinv(int);
+extern int set_yinv(int);
+extern int set_linerepeat(int);
+extern int set_refout(int);
+extern int set_reset(int);
+extern int set_skim(int);
+extern int set_power(int);
+extern int set_current(int);
+extern int set_bias(int);
+extern int set_bandwidth(int);
+extern int set_outputfactor(int);
+extern int set_itr(int);
+extern int set_multiplereadouts(int);
+extern int get_gain();
+extern int get_nondestructive();
+extern int get_xinv();
+extern int get_yinv();
+extern int get_linerepeat();
+extern int get_refout();
+extern int get_reset();
+extern int get_skim();
+extern int get_power();
+extern int get_current();
+extern int get_bias();
+extern int get_bandwidth();
+extern int get_outputfactor();
+extern int get_itr();
+extern int get_multiplereadouts();
+extern void set_9808_params_to_default();
+

@@ -1,0 +1,10 @@
+~~~~~~~~~~~~~~~~~~~~~~~
+xenics_pluto Change Log
+~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------
+v0.1.0, 2015-06-01
+------------------
+
+- Pulling together into a single package custom version of code that 
+SEL will need in NZ for 2015-06-29 occultation
