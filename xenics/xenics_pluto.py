@@ -176,6 +176,9 @@ class XenicsCamera():
         Total exposure time will be roughly:  nexp * coadds * exptime_sec
         
         The entire sequence is saved to disk at the end of the sequence to an automatically generated filename.
+        File name convention is:
+            ~/xenics-data/YYYY-MM-DD/YYYY_MM-DD-NNNN.fits
+        where YYYY-MM-DD is the UT date at the end of the exposure sequence
         
         To access images during sequence:
         save_every_Nth_to_currentfits = None -> don't save any images to disk until the entire sequence is saved
