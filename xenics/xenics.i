@@ -19,7 +19,7 @@ extern int get_pwm();
 extern int get_temperature_ADCtype();
 extern int get_temperature_ADU();
 extern void capture_frames(unsigned short *FrameBuffer, int n_pix);
-extern void open_camera();
+extern int open_camera();
 extern void close_camera();
 extern int get_fan();
 extern int set_fan(int);
@@ -82,7 +82,7 @@ extern int get_temperature_ADCtype();
 extern int get_temperature_ADU();
 %apply (unsigned short* INPLACE_ARRAY1, int DIM1) {(unsigned short* FrameBuffer, int n_pix)}
 extern void capture_frames(unsigned short *FrameBuffer, int n_pix);
-extern void open_camera();
+extern int open_camera();
 extern void close_camera();
 extern int get_fan();
 extern int set_fan(int);

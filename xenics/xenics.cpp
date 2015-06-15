@@ -945,7 +945,7 @@ void set_9808_params_to_default()
   (*hnd).cur_outputfactor = CW9808_outputfactor_DEFAULT;
 }
 
-void open_camera()
+int open_camera()
 {
   hnd = (XCCHANDLE_I *) malloc( sizeof(XCCHANDLE_I) );
   XCCERROR xcc_ret = XCC_I_OK;
@@ -983,7 +983,7 @@ void open_camera()
     }
   if((*hnd).camera_found_on_usb == 0)  {
     fprintf(stderr, "camera not found on USB\n");
-    return;
+    return 1;
   }
   udev = usb_open(camera_dev);
   if( 0 != (ret = usb_set_configuration(udev, camera_dev->config[0].bConfigurationValue)) )
@@ -1020,7 +1020,7 @@ void open_camera()
   xcc_ret |= set_capture_mode();
   xcc_ret |= (XCCERRORs)set_pwm(0);
   take_dummy_frame();  
-  return;
+  return 0;
 }
 
 void close_camera()
