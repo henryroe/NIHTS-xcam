@@ -1,3 +1,6 @@
 xenics_pluto.bbprojectd
 xenics/xenics.py
 xenics/xenics_wrap.cpp
+xenics/_xenics.so
+xenics/xenics.o
+xenics/xenics_wrap.o
