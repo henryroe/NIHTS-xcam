@@ -196,8 +196,6 @@ class XenicsCamera():
         self.nexp(nexp)
         # reset PWM start of each sequence; there's been occasional hints that camera can 'forget' its PWM setting
         self.set_pwm(self._pwm)
-        self.set_fan(self._fan)
-        self.set_gain(self._gain)
         single_exp_ims = np.zeros([self._coadds, self._max_height, self._max_width], dtype=ctypes.c_ushort)
         single_exp_ims_1d = single_exp_ims.view().reshape(-1)
         ims = np.zeros([self._nexp, self._max_height, self._max_width], dtype=np.int32)
