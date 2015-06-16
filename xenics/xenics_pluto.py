@@ -14,6 +14,7 @@ class XenicsCamera():
         self._pwm = 3000  
         self._exptime_sec = 1.0
         self._gain = False  # not sure if True is what xenics calls low or high gain, but True -> deeper wells, more e- per ADU.
+        self._fan = True
         if self._open_camera():
             self._coadds = 1
             self._nexp = 1

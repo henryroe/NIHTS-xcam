@@ -29,8 +29,11 @@ To download & install this package:
     make
     cd ..
     python setup.py develop
-    
 
+You will likely also want to install an image viewer.  I use [ztv](https://github.com/henryroe/ztv), which can be installed from [pypi](https://pypi.python.org/pypi/ztv) with:
+
+    pip install ztv
+    
 Usage
 =====
 
