@@ -101,6 +101,7 @@ class XenicsCamera():
         False - shallower wells w/ fewer electons per ADU  (shorter exposure times)
         """
         xenics.set_gain(new_gain)
+        self.set_fan(self._fan)  # added 2015-06-19 because changing gain was turning off fan
         self._gain = new_gain
     
     def get_pwm(self):
