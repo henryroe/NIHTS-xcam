@@ -10,6 +10,15 @@ Installation
 
 see the original project at [github](https://github.com/henryroe/xenics_pluto)
 
+Installation Notes for Windows
+============
+
+* use cygwin on windows as a shell.
+* install packages: swig, libusb, g++, make, python, python-numpy, python-devel, libusb
+* download libusb windows binaries from [sourceforge](https://sourceforge.net/projects/libusb-win32/files/libusb-win32-releases/1.2.6.0/)
+* add the appropriate libusb filter/wrapper for the xenics camera via libusb-win32-devel-filter-1.2.6.0.exe
+
+
 
 original Author
 ======
