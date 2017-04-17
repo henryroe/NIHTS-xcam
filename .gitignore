@@ -1,8 +1,10 @@
+.DS_Store
 xenics_pluto.egg-info
 *.pyc
 */*.pyc
 *-venv
-xenics_pluto.bbprojectd
+*.bbprojectd
+# ignore bunch of files that get generated during compilation 
 xenics/xenics.py
 xenics/xenics_wrap.cpp
 xenics/_xenics.so
