@@ -111,7 +111,9 @@ class XenicsCamera():
         return filename
 
     def _open_camera(self):
-        subprocess.Popen("pwrusb setone 1 1", shell=True)
+        print("Powering on camera with `pwrusb setone 1 1`")
+        p = subprocess.Popen("pwrusb setone 1 1", shell=True)
+        p.wait()
         self.serial_number = '3731'
         print("Assuming camera serial number is {}".format(self.serial_number))
         time.sleep(3)
@@ -129,10 +131,9 @@ class XenicsCamera():
     def close_camera(self):
         xenics.close_camera()
         time.sleep(1)
-        subprocess.Popen("pwrusb setone 1 0", shell=True)
-        raw_input("Press return to confirm you've disconnected power from camera.")
-        print("-----\nI recommend you now exit/close this python session and start a new session\n" + 
-              "before launching the camera again\n-----")
+        print("Powering off camera with `pwrusb setone 1 0`")
+        p = subprocess.Popen("pwrusb setone 1 0", shell=True)
+        p.wait()
 
     def set_pwm(self, new_pwm):
         """
