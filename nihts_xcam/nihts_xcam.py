@@ -180,6 +180,8 @@ class XenicsCamera():
         if no input is given, just returns the current exptime in seconds.
         """
         if exptime_sec is not None:
+            if exptime_sec <= 0.005: # force a minimum 5 msec exposure, is arbitrary limit
+                exptime_sec = 0.005
             xenics.set_integration_time_millisec(np.int(np.round(exptime_sec * 1000.)))
             self._exptime_sec = exptime_sec
         return self._exptime_sec
@@ -265,7 +267,7 @@ class XenicsCamera():
             im[:, :] = single_exp_ims.sum(axis=0)
             end_datetime = dt.datetime.utcnow()
             end_date_str = end_datetime.isoformat()
-            print("exp of {} coadds of {} seconds: took {} sec, expected ~{} sec".format(
+            print("exp of {} coadds of {} seconds: took {} sec, expected ~ {} sec".format(
                    self.coadds(), self.exptime(), 
                    (end_datetime - start_datetime).total_seconds(), 
                    self.coadds()*self.exptime()))
