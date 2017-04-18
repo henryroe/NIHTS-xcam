@@ -1,6 +1,13 @@
-~~~~~~~~~~~~~~~~~~~~~~~
-xenics_pluto Change Log
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+NIHTS-xcam Change Log
+~~~~~~~~~~~~~~~~~~~~~
+
+----------
+2017-04-17
+----------
+
+- renamed to NIHTS-xcam
+- working back in a bunch of changes from current/active project
 
 ------------------
 v0.1.0, 2015-06-01
