@@ -1,3 +1,3 @@
 from __future__ import absolute_import
 
-from .xenics_pluto import XenicsCamera
+from .nihts_xcam import XenicsCamera
