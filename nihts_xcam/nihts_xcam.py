@@ -180,8 +180,11 @@ class XenicsCamera():
         if no input is given, just returns the current exptime in seconds.
         """
         if exptime_sec is not None:
-            if exptime_sec <= 0.005: # force a minimum 5 msec exposure, is arbitrary limit
-                exptime_sec = 0.005
+            min_exptime_sec = 0.005
+            if exptime_sec <= min_exptime_sec: # force a minimum 5 msec exposure, is arbitrary limit
+                exptime_sec = min_exptime_sec
+                print("Exposure time was shorter than minimum " +
+                      "({} sec), resetting to minimum".format(min_exptime_sec))
             xenics.set_integration_time_millisec(np.int(np.round(exptime_sec * 1000.)))
             self._exptime_sec = exptime_sec
         return self._exptime_sec
