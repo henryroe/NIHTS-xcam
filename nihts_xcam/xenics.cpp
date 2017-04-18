@@ -991,6 +991,7 @@ int open_camera()
   if( 0 != (ret = usb_claim_interface(udev, camera_dev->config[0].interface->altsetting->bInterfaceNumber)) )
     fprintf(stderr,"SetupCameraHandle Error:  usb_claim_interface returns %d (%s)", ret, usb_strerror());
   (*hnd).m_hDevice = udev;
+  // Note that the following file path is automatically updated by the Makefile
   load_buffer_file("/Users/timo/Dropbox/xenics/xccfgh5_2.ttb");
   // 20110420:  HROE note:  confirmed this ttb file is what X-Control uses in 
   //            X-Control/Settings/auto_8637.xcf
