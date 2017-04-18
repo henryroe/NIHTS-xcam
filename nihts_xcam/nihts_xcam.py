@@ -270,7 +270,7 @@ class XenicsCamera():
                    self.coadds()*self.exptime()))
             tk_adu2 = self._get_ADU_temperature(nreads=5)
             tk_adc2 = self._get_ADCtype_temperature(nreads=5)
-            hdu = fits.PrimaryHDU(ims)
+            hdu = fits.PrimaryHDU(im)
             hdulist = fits.HDUList([hdu])
             hdu.header['OBJECT'] = self._target_name
             hdu.header['DATE-OBS'] = dt.datetime.utcnow().isoformat()
