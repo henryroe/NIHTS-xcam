@@ -252,8 +252,9 @@ class XenicsCamera():
         single_exp_ims = np.zeros([self._coadds, self._max_height, self._max_width], dtype=ctypes.c_ushort)
         single_exp_ims_1d = single_exp_ims.view().reshape(-1)
         im = np.zeros([self._max_height, self._max_width], dtype=np.int32)
-        cur_nexp = 1
+        cur_nexp = 0
         while (cur_nexp <= self._nexp) or (self._nexp == -1):
+            cur_nexp += 1
             tk_adu1 = self._get_ADU_temperature(nreads=5)
             tk_adc1 = self._get_ADCtype_temperature(nreads=5)
             start_datetime = dt.datetime.utcnow()
@@ -276,6 +277,7 @@ class XenicsCamera():
             hdu.header['DATE-OBS'] = dt.datetime.utcnow().isoformat()
             hdu.header['EXPTIME'] = (self._exptime_sec, "exposure time in seconds")
             hdu.header['COADDS'] = (self._coadds, "number of coadds per frame written to disk")
+            hdu.header['CURNEXP'] = (self._nexp, "current frame number in sequence")
             hdu.header['NEXP'] = (self._nexp, "total number of frames in current sequence")
             hdu.header['DATE-BEG'] = (start_date_str, "UT date time at sequence start")
             hdu.header['DATE-END'] = (end_date_str, "UT date time at sequence end")
