@@ -65,7 +65,7 @@ class XenicsCamera():
             self._max_height = xenics.get_max_height()
             self._max_width = xenics.get_max_width()
             self._cur_file_num = 1
-            obsdatadir = os.path.expanduser('~/xenics-data/')
+            obsdatadir = os.path.expanduser('~/xcam-data/')
             if not os.path.isdir(obsdatadir):
                 os.mkdir(obsdatadir)
             self.obsdatadir = obsdatadir
@@ -241,7 +241,7 @@ class XenicsCamera():
         Total exposure time will be roughly:  nexp * coadds * exptime_sec
         
         Each frame is saved to disk to an automatically generated filename, e.g.:
-            ~/xenics-data/YYYY-MM-DD/YYYY_MM-DD-NNNN.fits
+            ~/xcam-data/YYYY-MM-DD/YYYY_MM-DD-NNNN.fits
         where YYYY-MM-DD is the UT date at the end of the exposure sequence
         """
         self.exptime(exptime_sec)
