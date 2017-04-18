@@ -4,6 +4,8 @@ import xenics
 from astropy.io import fits
 import time
 import os
+import subprocess
+
 
 # TODO: better ctrl-c handling to kill just current sequence
 # TODO: include a github tag stamp whatever in each FITS header
@@ -109,8 +111,7 @@ class XenicsCamera():
         return filename
 
     def _open_camera(self):
-        # TK: switch to powering on/off directly using the pwrusb command line tool
-        raw_input("Press return to confirm you've power cycled the camera & the camera power is now ON.")
+        subprocess.Popen("pwrusb setone 1 1", shell=True)
         self.serial_number = '3731'
         print("Assuming camera serial number is {}".format(self.serial_number))
         time.sleep(3)
@@ -128,7 +129,7 @@ class XenicsCamera():
     def close_camera(self):
         xenics.close_camera()
         time.sleep(1)
-        # TK: switch to powering on/off directly using the pwrusb command line tool
+        subprocess.Popen("pwrusb setone 1 0", shell=True)
         raw_input("Press return to confirm you've disconnected power from camera.")
         print("-----\nI recommend you now exit/close this python session and start a new session\n" + 
               "before launching the camera again\n-----")
