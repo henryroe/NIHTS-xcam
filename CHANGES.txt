@@ -2,9 +2,9 @@
 NIHTS-xcam Change Log
 ~~~~~~~~~~~~~~~~~~~~~
 
-----------
-2017-04-17
-----------
+---------------------
+v0.2.0dev, 2017-04-17
+---------------------
 
 - renamed to NIHTS-xcam
 - working back in a bunch of changes from current/active project
