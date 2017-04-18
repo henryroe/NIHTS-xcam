@@ -5,7 +5,7 @@ __all__ = [
     "__email__", "__license__", "__copyright__",
 ]
 
-__title__ = "NIHTS-xcam"
+__title__ = "nihts_xcam"
 __summary__ = "Basic control software for the Xenics XEVA near-infrared slit-viewing camera on Lowell DCT NIHTS."
 __uri__ = "https://github.com/henryroe/NIHTS-xcam"
 

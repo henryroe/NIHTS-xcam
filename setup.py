@@ -5,7 +5,7 @@ import os
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
 about = {}
-with open(os.path.join(base_dir, "xenics", "__about__.py")) as f:
+with open(os.path.join(base_dir, "nihts_xcam", "__about__.py")) as f:
     exec(f.read(), about)
 
 # Get the long description from the relevant file, converting from md to rst if possible
